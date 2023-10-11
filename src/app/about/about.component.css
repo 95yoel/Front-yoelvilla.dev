@@ -29,7 +29,7 @@ li{
     border-radius: 50%;
     filter: brightness(0.9);
     transition: 0.5s;
-    z-index: 999;
+    z-index: 10;
 }
 
 i{
