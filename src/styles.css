@@ -9,8 +9,8 @@ body, html {
 
 /*Default padding*/
 body {
-  padding-top: 10%;
-  padding-bottom: 10%;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 
@@ -20,7 +20,7 @@ header, footer {
   left: 0;
   position: fixed;
   background: #333;
-  padding: 20px 0;
+  
   color: #fff;
 }
 
@@ -33,5 +33,26 @@ footer {
 }
 
 
+/*Media querys*/
 
+@media screen and (max-width: 1000px) {
+  body {
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+}
 
+@media screen and (max-width: 600px) {
+  body {
+    padding-top: 8%;
+    padding-bottom: 8%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    padding-top: 13%;
+    padding-bottom: 13%;
+  }
+}
+  
