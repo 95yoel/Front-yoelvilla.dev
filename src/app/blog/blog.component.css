@@ -1,0 +1,18 @@
+
+main{
+    display: flex;
+    flex-direction: row;
+}
+
+app-sidebar{
+    position: fixed;
+    height: 100vh;
+    padding-left: 10px;
+    padding-right: 20px;
+    background-color: lightblue;
+    width: 10%;
+    overflow: auto;
+}
+app-content{
+    margin-left: 15%;
+}
