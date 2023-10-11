@@ -5,12 +5,20 @@
 /* Set the default font family to Fira Code. */
 body, html {
     font-family: 'Fira Code', monospace;
+    background-color: #222222;
 }
 
 /*Default padding*/
 body {
   padding-top: 3%;
   padding-bottom: 3%;
+  margin: 0;
+}
+
+/*Style for links*/
+a{
+  color: #fff;
+  text-decoration: none;
 }
 
 
@@ -20,7 +28,7 @@ header, footer {
   left: 0;
   position: fixed;
   background: #333;
-  
+  z-index: 10;
   color: #fff;
 }
 
@@ -33,26 +41,53 @@ footer {
 }
 
 
+/*Styles for the scroll bar*/
+::-webkit-scrollbar {
+  width: 6px;
+  
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #222222;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #e2e2e2;
+}
+
+
 /*Media querys*/
 
 @media screen and (max-width: 1000px) {
   body {
     padding-top: 5%;
-    padding-bottom: 5%;
+    padding-bottom: 6%;
   }
 }
 
 @media screen and (max-width: 600px) {
   body {
     padding-top: 8%;
-    padding-bottom: 8%;
+    padding-bottom: 9%;
   }
 }
 
 @media screen and (max-width: 400px) {
   body {
     padding-top: 13%;
-    padding-bottom: 13%;
+    padding-bottom: 14%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  body {
+    padding-top: 16%;
+    padding-bottom: 16%;
   }
 }
   

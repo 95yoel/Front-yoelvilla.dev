@@ -1,0 +1,36 @@
+<div id="content">
+    <main>
+        <section>
+            <img src="../../assets/yoel.webp" width="10%" height="10%" alt="foto">
+        </section>
+        <section>
+            <h2>ABOUT ME</h2>
+            <p>Hello, I'm Yoel, a web developer based in Asturias, Spain! I'm constantly on the lookout for new opportunities to challenge my skills and expand my knowledge. I've developed this portfolio website from scratch, hosting it on an EC2 instance and ensuring it's secured with an SSL certificate to guarantee visitor safety.</p>
+            <p> As I continue to grow professionally, I'll be adding more content and features to this web.</p>
+            <p>Thank you for visiting and exploring my work!</p>
+        </section>
+        <section>
+            <ul>
+                <li>
+                    <a href="https://www.linkedin.com/in/yoel-villa-8a142723a/" title="linkedin">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/95yoel" title="github">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        
+    </main> 
+    <ng-particles
+    id="tsparticles"
+    [options]="particlesOptions"
+    [particlesInit]="particlesInit"
+    (particlesLoaded)="particlesLoaded($event)"
+    *ngIf="particlesVisible"
+  ></ng-particles>
+
+</div>
