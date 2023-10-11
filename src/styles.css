@@ -1,37 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
-/* Asegura que no haya margen o relleno predeterminado en el cuerpo o el HTML */
+
+/* Import Fira Code fonts. */
+@import url('https://fonts.googleapis.com/css?family=Fira+Code:400,700&display=swap');
+
+
+/* Set the default font family to Fira Code. */
+body, html {
+    font-family: 'Fira Code', monospace;
+  }
+
+ 
+/* Ensures there is no default margin or padding on the body or HTML. */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
   }
   
-  /* Establece una altura mínima del 100% en el elemento principal para garantizar que el footer esté en la parte inferior */
+  /* Set a minimum height of 100% on the main element to ensure the footer is at the bottom */
   app-root {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow: auto;
   }
   
-  /* Establece el estilo del header */
+  /* Set styles for the header */
+
   app-header {
-    background-color: #333; /* Cambia esto a tu color de fondo deseado */
-    color: #fff; /* Cambia esto al color de texto deseado */
-    padding: 10px; /* Añade relleno si es necesario */
+    position: fixed;
+    width: 100%;
+    background-color: #333; 
+    color: #fff; 
+    padding: 10px; 
   }
   
-  /* Establece el estilo del footer */
+  /* Set styles for the header */
+
   app-footer {
     position: fixed;
     width: 100%;
-    background-color: #333; /* Cambia esto a tu color de fondo deseado */
-    color: #fff; /* Cambia esto al color de texto deseado */
-    padding: 10px; /* Añade relleno si es necesario */
+    background-color: #333; 
+    color: #fff; 
+    padding: 10px; 
     bottom: 0;
   }
   
-  /* Asegura que el router outlet ocupe el espacio restante */
+  /* Ensure the router outlet occupies the remaining space.*/
   router-outlet {
     flex: 1;
   }
+
   
+
+  /*Set syles for the scroll bar*/
+  ::-webkit-scrollbar {
+    width: 6px;
+    
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #222222;
+    border-radius: 20px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #e2e2e2;
+  }
+
