@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+/* Asegura que no haya margen o relleno predeterminado en el cuerpo o el HTML */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  /* Establece una altura mínima del 100% en el elemento principal para garantizar que el footer esté en la parte inferior */
+  app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Establece el estilo del header */
+  app-header {
+    background-color: #333; /* Cambia esto a tu color de fondo deseado */
+    color: #fff; /* Cambia esto al color de texto deseado */
+    padding: 10px; /* Añade relleno si es necesario */
+  }
+  
+  /* Establece el estilo del footer */
+  app-footer {
+    position: fixed;
+    width: 100%;
+    background-color: #333; /* Cambia esto a tu color de fondo deseado */
+    color: #fff; /* Cambia esto al color de texto deseado */
+    padding: 10px; /* Añade relleno si es necesario */
+    bottom: 0;
+  }
+  
+  /* Asegura que el router outlet ocupe el espacio restante */
+  router-outlet {
+    flex: 1;
+  }
+  
