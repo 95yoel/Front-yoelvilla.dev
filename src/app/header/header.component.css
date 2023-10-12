@@ -9,3 +9,15 @@ button{
     cursor: pointer;
 }
 
+
+
+
+/* animation */
+
+.rotate {
+    transform: rotate(360deg);
+    transition: transform 1s linear;
+  }
+  
+  
+  

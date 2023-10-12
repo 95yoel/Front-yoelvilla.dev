@@ -26,8 +26,16 @@
     </div>
     <div style="display: flex; justify-content: flex-end;">
         <ul>
-            <li><i class="fa-solid fa-key" matTooltip="Admin" [matTooltipPosition]="'below'"></i></li>
-            <li><i class="fa-solid fa-gear" matTooltip="Config" [matTooltipPosition]="'below'"></i></li>
+            <li>
+                <a routerLink="login" (click)="rotateIcon(login)">
+                    <i class="fa-solid fa-key" #login matTooltip="Admin" [matTooltipPosition]="'below'"></i>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <i class="fa-solid fa-gear" #settings (click)="rotateIcon(settings)" matTooltip="Config" [matTooltipPosition]="'below'"></i>
+                </a>
+            </li>
             <li matTooltip="English" [matTooltipPosition]="'below'">ES</li>
         </ul>
     </div>
