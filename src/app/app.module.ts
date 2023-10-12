@@ -5,9 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgParticlesModule } from "ng-particles";
 
 // Angular Material imports
-
 import {MatTooltipModule,TooltipPosition} from '@angular/material/tooltip';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +24,7 @@ import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './users/login/login.component';
 import { AdminComponent } from './users/admin/admin.component';
+
 
 
 
@@ -44,6 +49,10 @@ import { AdminComponent } from './users/admin/admin.component';
     MatTooltipModule,
     MatButtonModule,
     MatTooltipModule,
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatCheckboxModule
 
   ],
   providers: [],
