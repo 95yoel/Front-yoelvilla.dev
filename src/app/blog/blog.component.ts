@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'app-blog',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent {
+
+  constructor(private scrollService:ScrollService) { }
+
+  ngOnInit(): void {
+    this.scrollService.deactivateScrollBlock();
+  }
 
 }

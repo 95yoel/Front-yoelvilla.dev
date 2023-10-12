@@ -1,6 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+// Angular Particles imports
 import { NgParticlesModule } from "ng-particles";
+
+// Angular Material imports
+
+import {MatTooltipModule,TooltipPosition} from '@angular/material/tooltip';
+import {MatButtonModule} from '@angular/material/button';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,7 +17,13 @@ import { FooterComponent } from './footer/footer.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContentComponent } from './blog/content/content.component';
 import { AboutComponent } from './about/about.component';
-import { SidebarComponent } from './blog/sidebar/sidebar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './users/login/login.component';
+import { AdminComponent } from './users/admin/admin.component';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -20,12 +33,18 @@ import { SidebarComponent } from './blog/sidebar/sidebar.component';
     BlogComponent,
     ContentComponent,
     AboutComponent,
-    SidebarComponent
+    LoginComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgParticlesModule
+    NgParticlesModule,
+    BrowserAnimationsModule,
+    MatTooltipModule,
+    MatButtonModule,
+    MatTooltipModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,15 +1,36 @@
 <nav style="display: flex; justify-content: space-between;">
     <div style="display: flex; justify-content: flex-start;">
         <ul>
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/about">About me</a></li>
-    </ul>
+            <li>
+                <i class="fa-solid fa-bars" matTooltip="Menu" [matTooltipPosition]="'below'"></i>
+            </li>
+            <li>
+                <a routerLink="/" 
+                matTooltip="Home" 
+                [matTooltipPosition]="'below'"
+                [matTooltipShowDelay]="500">
+
+                    Home
+                </a>
+            </li>
+            <li>
+                <a routerLink="/about" 
+                matTooltip="About me" 
+                [matTooltipPosition]="'below'"
+                [matTooltipShowDelay]="500">
+                
+                    About me
+                </a>
+            </li>
+        </ul>
     </div>
     <div style="display: flex; justify-content: flex-end;">
         <ul>
-            <li><i class="fa-solid fa-key"></i></li>
-            <li><i class="fa-solid fa-gear"></i></li>
-            <li>ES</li>
+            <li><i class="fa-solid fa-key" matTooltip="Admin" [matTooltipPosition]="'below'"></i></li>
+            <li><i class="fa-solid fa-gear" matTooltip="Config" [matTooltipPosition]="'below'"></i></li>
+            <li matTooltip="English" [matTooltipPosition]="'below'">ES</li>
         </ul>
     </div>
 </nav>
+
+

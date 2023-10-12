@@ -12,12 +12,12 @@
         <section>
             <ul>
                 <li>
-                    <a href="https://www.linkedin.com/in/yoel-villa-8a142723a/" title="linkedin">
+                    <a href="https://www.linkedin.com/in/yoel-villa/" matTooltip="LinkedIn" [matTooltipPosition]="'above'">
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="https://github.com/95yoel" title="github">
+                    <a href="https://github.com/95yoel" matTooltip="GitHub" [matTooltipPosition]="'above'">
                         <i class="fa-brands fa-github"></i>
                     </a>
                 </li>
@@ -30,7 +30,6 @@
     [options]="particlesOptions"
     [particlesInit]="particlesInit"
     (particlesLoaded)="particlesLoaded($event)"
-    *ngIf="particlesVisible"
-  ></ng-particles>
+    *ngIf="particlesVisible"></ng-particles>
 
 </div>

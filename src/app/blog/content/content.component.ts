@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class ContentComponent {
 
+  contentWidth = 'calc(100% - 100px);'
+
+
+  constructor() { }
+
+  onWidthChanged(newWidth: string) {
+    this.contentWidth = `calc(100% - ${newWidth})`;
+  }
+  
+
 }

@@ -1,4 +1,11 @@
 nav ul li {
     display: inline;
-    margin-right: 10px; /* Puedes ajustar el margen según tus preferencias */
+    margin-right: 10px; 
 }
+
+button{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+

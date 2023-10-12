@@ -1,17 +1,11 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    top: 0;
-    overflow-y: hidden;
-
-  }
+  
   main{
     margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
     text-align: center;
     background-color: #222222;
-    position: relative;
     color: #f8f8f8;
-    
   }
 
   ul{
