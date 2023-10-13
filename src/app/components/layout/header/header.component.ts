@@ -1,5 +1,5 @@
 import { Component, ViewChild,ElementRef } from '@angular/core';
-import { IconsBehaviorService } from 'src/services/icons-behavior.service';
+import { IconsBehaviorService } from '../../../../services/icons-behavior/icons-behavior.service';
 
 @Component({
   selector: 'app-header',

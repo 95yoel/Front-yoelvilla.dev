@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ScrollService } from '../../services/scroll.service';
+import { ScrollService } from 'src/services/scroll/scroll.service';
 
 @Component({
   selector: 'app-blog',

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import type { Container, Engine, ISourceOptions } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
-import { ParticlesService } from 'src/services/particles.service';
-import { ScrollService } from 'src/services/scroll.service';
+import { ParticlesService } from 'src/services/particles/particles.service';
+import { ScrollService } from 'src/services/scroll/scroll.service';
 
 @Component({
   selector: 'app-about',

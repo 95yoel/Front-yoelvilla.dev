@@ -3,7 +3,7 @@
         <p>
             <mat-form-field appearance="outline">
               <mat-label>User</mat-label>
-              <input matInput placeholder="UserExample1">
+              <input matInput placeholder="Enter your username" [formControl]="formLogin.username">
                 <mat-icon matSuffix style="margin-right: 20px;">
                     <i class="fa-solid fa-user" style="font-size: 20px;"></i>
                 </mat-icon>
@@ -14,20 +14,27 @@
           <p>
             <mat-form-field appearance="outline">
               <mat-label>Password</mat-label>
-              <input matInput [type]="inputType" placeholder="P4$$W0rd">
+              <input matInput [type]="inputType" placeholder="Enter your password" [formControl]="formLogin.password">
                 <mat-icon matSuffix style="margin-right: 20px;">
                     <i class="fa-solid fa-lock" style="font-size: 20px;"></i>
                 </mat-icon>
               <mat-hint>
-                <mat-checkbox class="example-margin" style="left: 0;">Mostrar contraseña</mat-checkbox>
+                <mat-checkbox class="example-margin" style="left: -25px;" (click)="togglePassword()">Show password</mat-checkbox>
               </mat-hint>
             </mat-form-field>
           </p>
           <div style="text-align: center;">
             <br>
-            <button mat-raised-button style="width: 5%;color: black;">
+            <button mat-raised-button style="width: 5%;color: black;" (click)="login()">
                 <i class="fa-regular fa-paper-plane" style="font-size: 20px;"></i>
             </button>
           </div>
-    </mat-card>      
+    </mat-card>
 </main>
+
+<ng-particles
+    id="tsparticles"
+    [options]="particlesOptions"
+    [particlesInit]="particlesInit"
+    (particlesLoaded)="particlesLoaded($event)"
+    *ngIf="particlesVisible"></ng-particles>
