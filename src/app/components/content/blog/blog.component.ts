@@ -11,6 +11,10 @@ export class BlogComponent {
   constructor(private scrollService:ScrollService) { }
 
   ngOnInit(): void {
+
+
+    //prevent inherited scroll block
+
     this.scrollService.deactivateScrollBlock();
   }
 

@@ -5,7 +5,8 @@ import { HostListener, Injectable } from '@angular/core';
 })
 export class ScrollService {
 
-
+  isHorizontal: boolean = false;
+  isDesktop: boolean = false;
 
   constructor() { }
 
@@ -42,6 +43,31 @@ export class ScrollService {
     document.body.style.overflow = 'auto';
   } 
 
+  //block horizontal scroll
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.isHorizontal = window.innerWidth > window.innerHeight;
+    this.isDesktop = window.innerWidth > 1080;
+
+    if (this.isHorizontal) {
+      
+      this.deactivateScrollBlock(); 
+    } else {
+      
+      this.activateScrollBlock(); 
+    }
+
+  }
+
+  blockScrollbyPixel(value: number) {
+    if(window.innerWidth>value){
+      this.scrollToTop();
+      this.activateScrollBlock();
+    }
+  }
+
+  
   //Move scroll to top
 
   scrollToTop() {

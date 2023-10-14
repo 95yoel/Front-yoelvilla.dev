@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2, HostListener, OnInit } from '@angular/core';
+
+
 import type { Container, Engine, ISourceOptions } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 import { ParticlesService } from 'src/services/particles/particles.service';
@@ -11,15 +13,25 @@ import { ScrollService } from 'src/services/scroll/scroll.service';
 })
 export class AboutComponent {
 
-  constructor(public particlesService: ParticlesService,public scrollService:ScrollService) { }
+  //postion for snakcbar
+  position = "above";
 
-    id = this.particlesService.id;
+  //variables for particles
 
-    position = "above";
+  id = this.particlesService.id;
 
-    particlesVisible = this.particlesService.particlesVisible;
+  particlesVisible = this.particlesService.particlesVisible;
 
-    particlesOptions: ISourceOptions = this.particlesService.particlesOptions;
+  particlesOptions: ISourceOptions = this.particlesService.particlesOptions;
+
+  constructor(public particlesService: ParticlesService,
+              public scrollService:ScrollService,
+              private renderer:Renderer2) { }
+
+
+    //PARTICLES JS FUNCTIONS ************
+
+    //Inicialize particles
 
     async particlesInit(engine: Engine): Promise<void> {
      console.log("init", engine);
@@ -28,20 +40,41 @@ export class AboutComponent {
    }
 
 
+   //check if particles are loaded **DELETE ON PROD**
+
    public particlesLoaded(container: Container): void {
      console.log("loaded", container);
    }
 
-
    
-
-
-  ngOnInit(): void {
+  ngAfterViewInit() {
     
-    this.scrollService.scrollToTop();
+    //Block scroll by window width
+    this.scrollService.blockScrollbyPixel(900);
 
-    this.scrollService.activateScrollBlock();
+    //Listen for orientation change and block scroll if the screen is horizontal
+
+    this.renderer.listen('window', 'orientationchange', () => {
+
+      const ResizeEvent = new Event('resize');
+      this.scrollService.onResize(ResizeEvent);
+
+      if (this.scrollService.isHorizontal ) {
+        
+        this.scrollService.activateScrollBlock();
+        
+      } else {
+        
+        this.scrollService.scrollToTop();
+        this.scrollService.deactivateScrollBlock(); 
+      }
+
+
+    });
   }
+  
+
+  
 
 
 }

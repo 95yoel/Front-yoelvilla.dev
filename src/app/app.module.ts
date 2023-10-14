@@ -28,6 +28,13 @@ import { AdminComponent } from './components/users/admin/admin.component';
 import { ContentComponent } from './components/content/blog/content/content.component';
 
 
+//Service imports
+import { ScrollService } from 'src/services/scroll/scroll.service';
+
+
+
+
+
 
 
 
@@ -58,7 +65,7 @@ import { ContentComponent } from './components/content/blog/content/content.comp
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [ScrollService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
