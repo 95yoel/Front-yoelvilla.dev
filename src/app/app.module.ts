@@ -2,6 +2,7 @@ import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
 
 
 // Angular Particles imports
@@ -30,13 +31,7 @@ import { ContentComponent } from './components/content/blog/content/content.comp
 
 //Service imports
 import { ScrollService } from 'src/services/scroll/scroll.service';
-
-
-
-
-
-
-
+import { HttpClient } from '@angular/common/http';
 
 
 @NgModule({
@@ -62,7 +57,8 @@ import { ScrollService } from 'src/services/scroll/scroll.service';
     MatInputModule,
     MatFormFieldModule,
     MatCheckboxModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [ScrollService],
