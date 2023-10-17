@@ -8,8 +8,13 @@ import { Component } from '@angular/core';
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
+
+
 export class ContentComponent {
 
+  
+
+  message: string='';
   
   constructor(private http:HttpClient) { }
 
@@ -17,7 +22,7 @@ export class ContentComponent {
 
     this.http.get('http://localhost:8000/').subscribe((data)=>{
       console.log(data);
-    
+      this.message = (data as any).message;
     
     });
 
