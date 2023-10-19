@@ -1,0 +1,73 @@
+<main>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                <h1>Register</h1>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Enter your name">
+                <mat-icon matSuffix style="margin-right: 20px;">
+                    <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+                </mat-icon>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline">
+                <mat-label>Surnames</mat-label>
+                <input matInput placeholder="Enter your surnames">
+                <mat-icon matSuffix style="margin-right: 20px;">
+                    <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+                </mat-icon>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Enter your email">
+                <mat-icon matSuffix style="margin-right: 20px;">
+                    <i class="fa-solid fa-envelope" style="font-size: 20px;"></i>
+                </mat-icon>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Enter your password">
+                <mat-icon matSuffix style="margin-right: 20px;">
+                    <i class="fa-solid fa-lock" style="font-size: 20px;"></i>
+                </mat-icon>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput placeholder="Enter your password">
+                <mat-icon matSuffix style="margin-right: 20px;">
+                    <i class="fa-solid fa-lock" style="font-size: 20px;"></i>
+                </mat-icon>
+            </mat-form-field>
+            <br>
+            <!-- <button type="submit" [disabled]="!form.form.valid">
+                Save
+            </button> 
+            ****************************** USE THIS LOGIC IN THE BUTTON DOWN , MANTAIN THE DISABLED ATTRIBUTE UNTIL ALL THE FIELDS ARE FILLED AND VALIDATED
+            -->
+            <div style="text-align: center;">
+                <br>
+                <button mat-raised-button style="width: 5%;color: black;">
+                    <i class="fa-regular fa-paper-plane" style="font-size: 20px;"></i>
+                </button>
+            </div>
+            
+        </mat-card-content>
+        <mat-card-footer>
+            <p><i>Come back <a routerLink="/login" style="color: black;font-weight: bolder;">here</a></i></p>
+        </mat-card-footer>
+    </mat-card>
+</main>
+
+<ng-particles
+    id="tsparticles"
+    [options]="particlesOptions"
+    [particlesInit]="particlesInit"
+    (particlesLoaded)="particlesLoaded($event)"
+    *ngIf="particlesVisible"></ng-particles>

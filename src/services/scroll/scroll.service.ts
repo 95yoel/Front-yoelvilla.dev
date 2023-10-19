@@ -75,4 +75,16 @@ export class ScrollService {
   }
 
 
+
+  //control the scroll when innerHeight is less than a certain amount
+  controleScroll(amount:number){
+    if(window.innerHeight > amount){
+      this.activateScrollBlock();
+    }else{
+      this.deactivateScrollBlock();
+    }
+  }
+
+  
+
 }

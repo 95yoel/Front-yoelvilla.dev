@@ -31,6 +31,10 @@ export class LoginComponent {
               ,public scrollService:ScrollService
               ,public loginFormService:LoginFormService) { }
 
+    particlesVisible = this.particlesService.particlesVisible;
+
+    particlesOptions: ISourceOptions = this.particlesService.particlesOptions;
+
 
   ngOnInit(): void {
     
@@ -40,9 +44,7 @@ export class LoginComponent {
   }
 
   
-    particlesVisible = this.particlesService.particlesVisible;
-
-    particlesOptions: ISourceOptions = this.particlesService.particlesOptions;
+  //load particles
 
     async particlesInit(engine: Engine): Promise<void> {
      console.log("init", engine);
@@ -50,7 +52,7 @@ export class LoginComponent {
      await loadFull(engine);
    }
 
-   //si falla aqui habia un public antes de particlesLoaded pero no creo que sea necesario
+   
    particlesLoaded(container: Container): void {
      console.log("loaded", container);
    }

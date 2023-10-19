@@ -32,6 +32,7 @@ import { ContentComponent } from './components/content/blog/content/content.comp
 //Service imports
 import { ScrollService } from 'src/services/scroll/scroll.service';
 import { HttpClient } from '@angular/common/http';
+import { RegisterComponent } from './components/users/register/register.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { HttpClient } from '@angular/common/http';
     AboutComponent,
     LoginComponent,
     AdminComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
