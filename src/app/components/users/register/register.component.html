@@ -1,14 +1,14 @@
 <main>
     <mat-card>
-        <mat-card-header>
-            <mat-card-title>
-                <h1>Register</h1>
-            </mat-card-title>
-        </mat-card-header>
+        
         <mat-card-content>
             <mat-form-field appearance="outline">
                 <mat-label>Name</mat-label>
-                <input matInput placeholder="Enter your name">
+
+                <input matInput placeholder="Enter your name"
+                [formControl]="formRegister.name" 
+                (input)="evalName($event)">
+
                 <mat-icon matSuffix style="margin-right: 20px;">
                     <i class="fa-solid fa-user" style="font-size: 20px;"></i>
                 </mat-icon>
@@ -16,7 +16,11 @@
             <br>
             <mat-form-field appearance="outline">
                 <mat-label>Surnames</mat-label>
-                <input matInput placeholder="Enter your surnames">
+
+                <input matInput placeholder="Enter your surnames" 
+                [formControl]="formRegister.surname"
+                (input)="evalSurname($event)">
+
                 <mat-icon matSuffix style="margin-right: 20px;">
                     <i class="fa-solid fa-user" style="font-size: 20px;"></i>
                 </mat-icon>
@@ -24,7 +28,9 @@
             <br>
             <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="Enter your email">
+                <input matInput placeholder="Enter your email" 
+                [formControl]="formRegister.email"
+                (input)="evalEmail($event)">
                 <mat-icon matSuffix style="margin-right: 20px;">
                     <i class="fa-solid fa-envelope" style="font-size: 20px;"></i>
                 </mat-icon>
@@ -32,7 +38,9 @@
             <br>
             <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
-                <input matInput placeholder="Enter your password">
+                <input matInput placeholder="Enter your password" 
+                [formControl]="formRegister.password"
+                (input)="evalPassword($event)">
                 <mat-icon matSuffix style="margin-right: 20px;">
                     <i class="fa-solid fa-lock" style="font-size: 20px;"></i>
                 </mat-icon>
@@ -40,20 +48,18 @@
             <br>
             <mat-form-field appearance="outline">
                 <mat-label>Confirm Password</mat-label>
-                <input matInput placeholder="Enter your password">
+
+                <input matInput placeholder="Enter your password"
+                 [formControl]="password2"
+                 (input)="evalPassword2($event)">
                 <mat-icon matSuffix style="margin-right: 20px;">
                     <i class="fa-solid fa-lock" style="font-size: 20px;"></i>
                 </mat-icon>
             </mat-form-field>
             <br>
-            <!-- <button type="submit" [disabled]="!form.form.valid">
-                Save
-            </button> 
-            ****************************** USE THIS LOGIC IN THE BUTTON DOWN , MANTAIN THE DISABLED ATTRIBUTE UNTIL ALL THE FIELDS ARE FILLED AND VALIDATED
-            -->
             <div style="text-align: center;">
                 <br>
-                <button mat-raised-button style="width: 5%;color: black;">
+                <button mat-raised-button style="width: 5%;color: black;" [disabled]="!formValid" (click)="validatePasswordAndEnableButton()">
                     <i class="fa-regular fa-paper-plane" style="font-size: 20px;"></i>
                 </button>
             </div>
