@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 //import services
 import { ParticlesService } from 'src/services/particles/particles.service';
@@ -8,7 +9,8 @@ import { ScrollService } from 'src/services/scroll/scroll.service';
 //import particles.ts
 import type { Container, Engine, ISourceOptions } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
-import * as e from 'express';
+
+
 
 @Component({
   selector: 'app-register',
@@ -42,7 +44,7 @@ export class RegisterComponent {
   
   
 
-  constructor(public scrollService:ScrollService,public particlesService: ParticlesService) { }
+  constructor(public scrollService:ScrollService,public particlesService: ParticlesService,private http:HttpClient) { }
 
     particlesVisible = this.particlesService.particlesVisible;
 
@@ -122,7 +124,7 @@ export class RegisterComponent {
   }
   
   
-  validatePasswordAndEnableButton() {
+  submitForm() {
 
     const passwordValue = this.formRegister.password.value;
     const password2Value = this.password2.value;
@@ -143,6 +145,18 @@ export class RegisterComponent {
     }else{
       
       //logic to send the data to the backend
+
+      const userData = {
+        name: this.formRegister.name.value,
+        surname: this.formRegister.surname.value,
+        email: this.formRegister.email.value,
+        password: this.formRegister.password.value,
+      };
+
+      this.http.post('http://localhost:8000/create_user',userData).subscribe((data:any)=>{
+        console.log(data);
+      }
+      );
 
     }
 
