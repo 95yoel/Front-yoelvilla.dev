@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 //import services 
 import { ParticlesService } from 'src/services/particles/particles.service';
@@ -9,6 +10,7 @@ import { LoginFormService } from 'src/services/login-form/login-form.service';
 //import particles.ts
 import type { Container, Engine, ISourceOptions } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
+
 
 
 @Component({
@@ -22,14 +24,15 @@ export class LoginComponent {
   id = this.particlesService.id;
 
   formLogin = {
-    username: new FormControl(''),
+    email: new FormControl(''),
     password: new FormControl(''),
   };
 
 
   constructor(public particlesService: ParticlesService
               ,public scrollService:ScrollService
-              ,public loginFormService:LoginFormService) { }
+              ,public loginFormService:LoginFormService,
+              private http:HttpClient) { }
 
     particlesVisible = this.particlesService.particlesVisible;
 
@@ -58,7 +61,33 @@ export class LoginComponent {
    }
 
    login() {
-    this.loginFormService.login(this.formLogin);
+    if(this.loginFormService.login(this.formLogin)){
+      
+      const loginData = {
+        
+        email: this.formLogin.email.value,
+        password: this.formLogin.password.value,
+      };
+
+
+
+      this.http.post('http://localhost:8000/login',loginData).subscribe((res:any)=>{
+
+        // if(res.status === 'success'){
+        //   alert('Login successful');
+        // }else{
+        //   alert('Login failed');
+        // }
+        console.log(res);
+
+      }
+      );
+
+
+
+    }else{
+      return;
+    }
   }
 
   togglePassword() {

@@ -5,11 +5,13 @@ import { Injectable } from '@angular/core';
 })
 export class LoginFormService {
 
+  loginFormValid = false;
+
   constructor() { }
 
   
   login(formLogin: any) {
-    this.checkFormStatus(formLogin);
+    return this.checkFormStatus(formLogin);
   }
 
   togglePassword(inputType: string) {
@@ -21,13 +23,22 @@ export class LoginFormService {
   }
 
   checkFormStatus(formLogin: any) {
-    if (formLogin.username.value === '' && formLogin.password.value === '') {
-      alert('Please enter a username and password');
-    } else if (formLogin.username.value === '') {
-      alert('Please enter a username');
+    if (formLogin.email.value === '' && formLogin.password.value === '') {
+      this.loginFormValid = false;
+      alert('Please enter a valid email and password');
+    } else if (formLogin.email.value === '') {
+      this.loginFormValid = false;
+      alert('Please enter a email');
     } else if (formLogin.password.value === '') {
+      this.loginFormValid = false;
       alert('Please enter a password');
+    }else{
+      this.loginFormValid = true;
+      
     }
+
+    return this.loginFormValid;
+
   }
 
 
